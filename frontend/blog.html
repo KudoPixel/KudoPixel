@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KudoPixel Blog - The KudoVerse Chronicle</title>
+    <meta name="description" content="The official blog of KudoPixel. Get behind-the-scenes insights, video summaries, and community news.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* --- Consistent Styles --- */
+        :root {
+            --bg-primary: #0D0D1A;
+            --bg-secondary: #1A1A2E;
+            --accent-primary: #9F5DFF;
+            --accent-secondary: #00E5FF;
+            --text-primary: #E0E0E0;
+            --text-secondary: #A0A0B0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(159, 93, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(159, 93, 255, 0.3);
+            border-color: rgba(159, 93, 255, 0.5);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image:
+                linear-gradient(to right, rgba(159, 93, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(159, 93, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header (Consistent) -->
+    <header x-data="{ mobileMenuOpen: false }" class="bg-black/30 backdrop-blur-lg sticky top-0 z-50 border-b border-purple-500/20">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-orbitron text-2xl font-bold tracking-wider gradient-text">KUDOPIXEL</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="videos.html" class="text-gray-300 hover:text-white transition-colors">Videos</a>
+                <a href="community.html" class="text-gray-300 hover:text-white transition-colors">Community</a>
+                <a href="server.html" class="text-gray-300 hover:text-white transition-colors">Server</a>
+                <a href="story.html" class="text-gray-300 hover:text-white transition-colors">Story</a>
+                <a href="blog.html" class="text-white font-bold">Blog</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-16 md:py-24">
+        
+        <!-- Page Header -->
+        <section class="text-center mb-20 md:mb-24">
+            <h1 class="font-orbitron text-4xl md:text-6xl font-bold mb-4 uppercase tracking-wide">The KudoVerse Chronicle</h1>
+            <p class="text-lg text-text-secondary mb-10 max-w-3xl mx-auto">Video summaries, development updates, and stories from within the community.</p>
+        </section>
+
+        <!-- Featured Post -->
+        <section class="mb-20">
+            <a href="#" class="block glass-card rounded-2xl md:grid grid-cols-2 overflow-hidden">
+                <div class="col-span-1">
+                    <img src="https://placehold.co/800x600/1A1A2E/9F5DFF?text=Featured+Post" alt="Featured Post Image" class="w-full h-full object-cover">
+                </div>
+                <div class="col-span-1 p-8 md:p-12 flex flex-col justify-center">
+                    <p class="gradient-text font-semibold uppercase">Video Summary</p>
+                    <h2 class="font-orbitron text-3xl mt-2 mb-4">Inside the Aetherium Core Build</h2>
+                    <p class="text-text-secondary mb-6">We just finished the most complex part of the mega-base. This post breaks down the AI-generated summary of the latest video, detailing the resource gathering, the Redstone contraptions, and the near-disasters we faced along the way...</p>
+                    <span class="text-white font-semibold">Read More &rarr;</span>
+                </div>
+            </a>
+        </section>
+
+        <!-- Recent Posts -->
+        <section>
+            <h3 class="font-orbitron text-3xl mb-8">Recent Posts</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Post Card 1 -->
+                <a href="#" class="block glass-card rounded-2xl overflow-hidden">
+                    <img src="https://placehold.co/600x400/1A1A2E/00E5FF?text=Post" alt="Post Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="gradient-text text-sm font-semibold uppercase">Community</p>
+                        <h4 class="font-bold text-xl mt-1">Top 5 Ideas from the Community Board</h4>
+                        <p class="text-text-secondary text-sm mt-2">You voted, we listened. Here are the top ideas we're considering for future videos.</p>
+                    </div>
+                </a>
+                <!-- Post Card 2 -->
+                <a href="#" class="block glass-card rounded-2xl overflow-hidden">
+                    <p class="gradient-text text-sm font-semibold uppercase">Dev Log</p>
+                    <h4 class="font-bold text-xl mt-1">KudoVerse Website Update v1.1</h4>
+                    <p class="text-text-secondary text-sm mt-2">Behind the scenes of the new profile page and achievement system.</p>
+                    </div>
+                </a>
+                <!-- Post Card 3 -->
+                <a href="#" class="block glass-card rounded-2xl overflow-hidden">
+                    <img src="https://placehold.co/600x400/1A1A2E/FF5733?text=Post" alt="Post Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="gradient-text text-sm font-semibold uppercase">Video Summary</p>
+                        <h4 class="font-bold text-xl mt-1">100 Days in an Ocean World: The Recap</h4>
+                        <p class="text-text-secondary text-sm mt-2">An AI-powered summary of the highs and lows of the latest 100-day challenge.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Consistent) -->
+    <footer class="bg-black/50 border-t border-purple-500/20 mt-24 md:mt-32">
+        <div class="container mx-auto px-6 py-8 text-center text-text-secondary">
+            <p>&copy; 2025 KudoPixel. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

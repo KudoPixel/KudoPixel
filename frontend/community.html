@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KudoPixel Community Hub</title>
+    <meta name="description" content="The official KudoPixel community hub. Submit ideas, view fan art, check the Minecraft server status, and explore our world.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts: Orbitron for titles, Poppins for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for simple interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* --- Copied from Homepage/Story for Consistency --- */
+        :root {
+            --bg-primary: #0D0D1A;
+            --bg-secondary: #1A1A2E;
+            --accent-primary: #9F5DFF;
+            --accent-secondary: #00E5FF;
+            --text-primary: #E0E0E0;
+            --text-secondary: #A0A0B0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(159, 93, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(159, 93, 255, 0.3);
+            border-color: rgba(159, 93, 255, 0.5);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image:
+                linear-gradient(to right, rgba(159, 93, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(159, 93, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent-primary), #7a2cff);
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 12px 28px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(159, 93, 255, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(159, 93, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header (Consistent) -->
+    <header x-data="{ mobileMenuOpen: false }" class="bg-black/30 backdrop-blur-lg sticky top-0 z-50 border-b border-purple-500/20">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-orbitron text-2xl font-bold tracking-wider gradient-text">KUDOPIXEL</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#latest-video" class="text-gray-300 hover:text-white transition-colors">Latest Video</a>
+                <a href="community.html" class="text-white font-bold">Community</a>
+                <a href="./server.html" class="text-gray-300 hover:text-white transition-colors">Server</a>
+                <a href="story.html" class="text-gray-300 hover:text-white transition-colors">Story</a>
+            </div>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden bg-bg-secondary/90 backdrop-blur-lg">
+            <a href="index.html#latest-video" class="block py-3 px-6 text-gray-300 hover:bg-purple-500/20">Latest Video</a>
+            <a href="community.html" class="block py-3 px-6 text-white font-bold bg-purple-500/20">Community</a>
+            <a href="#" class="block py-3 px-6 text-gray-300 hover:bg-purple-500/20">Server</a>
+            <a href="story.html" class="block py-3 px-6 text-gray-300 hover:bg-purple-500/20">Story</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16 md:py-24">
+
+        <!-- Page Header -->
+        <section class="text-center mb-20 md:mb-24">
+            <h1 class="font-orbitron text-4xl md:text-6xl font-bold mb-4 uppercase tracking-wide">Community Hub</h1>
+            <p class="text-lg text-text-secondary mb-10 max-w-3xl mx-auto">This is where the KudoVerse comes alive. Shape the content, showcase your talent, and connect with fellow adventurers.</p>
+        </section>
+
+        <!-- Main Grid Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Left Column: Server & Map -->
+            <div class="lg:col-span-1 flex flex-col gap-8">
+                <!-- Minecraft Server Card -->
+                <div class="glass-card rounded-2xl p-8 flex-grow">
+                    <h3 class="font-orbitron text-2xl font-bold mb-4">Official Server</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-text-secondary">Status:</span>
+                            <span class="flex items-center font-semibold text-green-400">
+                                <span class="w-3 h-3 bg-green-400 rounded-full mr-2"></span>
+                                Online
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-text-secondary">Players:</span>
+                            <span class="font-semibold">42 / 100</span>
+                        </div>
+                        <div x-data="{ copied: false }" class="bg-black/20 p-3 rounded-lg flex justify-between items-center">
+                            <span class="text-cyan-400 font-mono">play.kudopixel.com</span>
+                            <button @click="copied = true; navigator.clipboard.writeText('play.kudopixel.com'); setTimeout(() => copied = false, 2000)">
+                                <span x-show="!copied">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                                </span>
+                                <span x-show="copied" class="text-green-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="w-full mt-6 bg-cyan-600/50 hover:bg-cyan-500/80 text-white font-semibold py-3 rounded-lg transition-colors">View Rules & Info</button>
+                </div>
+
+                <!-- Interactive Map Card -->
+                <div class="glass-card rounded-2xl p-8 flex-grow flex flex-col">
+                    <h3 class="font-orbitron text-2xl font-bold mb-2">Interactive World Map</h3>
+                    <p class="text-text-secondary mb-4 flex-grow">Get a bird's-eye view of our server world. Discover bases, landmarks, and secret locations.</p>
+                    <button class="w-full mt-auto bg-purple-600/50 hover:bg-purple-500/80 text-white font-semibold py-3 rounded-lg transition-colors">Launch Map</button>
+                </div>
+            </div>
+
+            <!-- Right Column: Idea Board & Hall of Fame -->
+            <div x-data="{ tab: 'ideas' }" class="lg:col-span-2 glass-card rounded-2xl p-8">
+                <!-- Tab Buttons -->
+                <div class="flex border-b border-purple-500/20 mb-6">
+                    <button @click="tab = 'ideas'" :class="{ 'border-purple-500 text-white': tab === 'ideas', 'border-transparent text-text-secondary': tab !== 'ideas' }" class="font-orbitron font-bold py-3 px-6 border-b-2 transition-colors">Idea Board</button>
+                    <button @click="tab = 'fame'" :class="{ 'border-cyan-500 text-white': tab === 'fame', 'border-transparent text-text-secondary': tab !== 'fame' }" class="font-orbitron font-bold py-3 px-6 border-b-2 transition-colors">Hall of Fame</button>
+                </div>
+
+                <!-- Ideas Content -->
+                <div x-show="tab === 'ideas'">
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="text-xl font-bold text-text-primary">Top Community Ideas</h4>
+                        <button class="btn-primary text-sm py-2 px-4">Submit Your Idea</button>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- Mock Idea 1 -->
+                        <div class="bg-black/20 p-4 rounded-lg flex items-center justify-between hover:bg-black/40 transition-colors">
+                            <div>
+                                <p class="font-semibold">Build a working Redstone computer in Hardcore</p>
+                                <p class="text-sm text-text-secondary">Submitted by @PixelWizard</p>
+                            </div>
+                            <div class="text-center ml-4 flex-shrink-0">
+                                <button class="text-gray-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a1 1 0 01-1-1V5.414l-3.293 3.293a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 11-1.414 1.414L11 5.414V17a1 1 0 01-1 1z" clip-rule="evenodd" /></svg></button>
+                                <p class="font-bold text-lg text-purple-400">1,204</p>
+                            </div>
+                        </div>
+                        <!-- Mock Idea 2 -->
+                        <div class="bg-black/20 p-4 rounded-lg flex items-center justify-between hover:bg-black/40 transition-colors">
+                            <div>
+                                <p class="font-semibold">Survive 100 Days in an Ocean-Only world</p>
+                                <p class="text-sm text-text-secondary">Submitted by @AquaGirl</p>
+                            </div>
+                            <div class="text-center ml-4 flex-shrink-0">
+                                <button class="text-gray-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a1 1 0 01-1-1V5.414l-3.293 3.293a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 11-1.414 1.414L11 5.414V17a1 1 0 01-1 1z" clip-rule="evenodd" /></svg></button>
+                                <p class="font-bold text-lg text-purple-400">987</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hall of Fame Content -->
+                <div x-show="tab === 'fame'" style="display: none;">
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="text-xl font-bold text-text-primary">Featured Fan Art</h4>
+                         <button class="btn-primary text-sm py-2 px-4" style="background: linear-gradient(90deg, var(--accent-secondary), #00b8d4);">Upload Yours</button>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <img src="https://placehold.co/400x400/1A1A2E/00E5FF?text=Fan+Art+1" alt="[تصویر فن‌آرت ۱]" class="rounded-lg aspect-square object-cover hover:scale-105 transition-transform">
+                        <img src="https://placehold.co/400x400/1A1A2E/00E5FF?text=Fan+Art+2" alt="[تصویر فن‌آرت ۲]" class="rounded-lg aspect-square object-cover hover:scale-105 transition-transform">
+                        <img src="https://placehold.co/400x400/1A1A2E/00E5FF?text=Fan+Art+3" alt="[تصویر فن‌آرت ۳]" class="rounded-lg aspect-square object-cover hover:scale-105 transition-transform">
+                        <img src="https://placehold.co/400x400/1A1A2E/00E5FF?text=Fan+Art+4" alt="[تصویر فن‌آرت ۴]" class="rounded-lg aspect-square object-cover hover:scale-105 transition-transform">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Consistent) -->
+    <footer class="bg-black/50 border-t border-purple-500/20 mt-24 md:mt-32">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <p class="text-text-secondary">&copy; 2025 KudoPixel. All Rights Reserved.</p>
+                <p class="font-orbitron text-xl gradient-text">KUDOVERSE</p>
+                <div class="flex space-x-6">
+                    <a href="#" aria-label="YouTube" class="text-gray-400 hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418ZM15.194 12 10 15.194V8.806L15.194 12Z" clip-rule="evenodd" /></svg></a>
+                    <a href="#" aria-label="Twitch" class="text-gray-400 hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57Z M6 4.714h1.714v5.143H6Z M12 2 2 7.143v10.286h5.143V22l5.143-4.571h3.428L22 12V2H12Z" /></svg></a>
+                    <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-white transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.996 4.107 4.107 0 0 0-6.993 3.743 11.65 11.65 0 0 1-8.457-4.287 4.106 4.106 0 0 0 1.27 5.477A4.072 4.072 0 0 1 2.8 9.71v.052a4.105 4.105 0 0 0 3.292 4.022 4.095 4.095 0 0 1-1.853.07 4.108 4.108 0 0 0 3.834 2.85A8.233 8.233 0 0 1 2 18.407a11.616 11.616 0 0 0 6.29 1.84" /></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
