@@ -1,154 +1,335 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join the KudoVerse - KudoPixel</title>
-    <meta name="description" content="Create your unified KudoVerse profile to track achievements, vote on ideas, and become a core member of the KudoPixel community.">
-    
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>به KudoVerse ملحق شو - KudoPixel</title>
+    <meta
+      name="description"
+      content="پروفایل یکپارچه KudoVerse خود را بسازید تا دستاوردها را دنبال کنید، به ایده‌ها رأی دهید و به یک عضو اصلی جامعه KudoPixel تبدیل شوید."
+    />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Fonts: Orbitron for titles, Poppins for body -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
-   
-    <style>
-        /* --- Consistent Styles --- */
-        :root {
-            --bg-primary: #0D0D1A; --bg-secondary: #1A1A2E; --accent-primary: #9F5DFF;
-            --accent-secondary: #00E5FF; --text-primary: #E0E0E0; --text-secondary: #A0A0B0;
-        }
-        body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
-        main { flex-grow: 1; }
-        .font-orbitron { font-family: 'Orbitron', sans-serif; }
-        .glass-card { background: rgba(26, 26, 46, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(159, 93, 255, 0.2); }
-        .gradient-text { background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: linear-gradient(to right, rgba(159, 93, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(159, 93, 255, 0.05) 1px, transparent 1px); background-size: 50px 50px; z-index: -1; opacity: 0.5; }
-        .form-input { background-color: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; width: 100%; transition: all 0.2s ease; color: var(--text-primary); }
-        .form-input:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 15px rgba(159, 93, 255, 0.5); }
-        .form-button { background: linear-gradient(90deg, var(--accent-primary), #7a2cff); font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: 1px; padding: 12px; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(159, 93, 255, 0.3); width: 100%; color: white; }
-        .form-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(159, 93, 255, 0.5); }
-    </style>
-</head>
-<body class="antialiased">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- استایل‌های یکپارچه --- */
+      :root {
+        --bg-primary: #0d0d1a;
+        --bg-secondary: #1a1a2e;
+        --accent-primary: #9f5dff;
+        --accent-secondary: #00e5ff;
+        --text-primary: #e0e0e0;
+        --text-secondary: #a0a0b0;
+      }
+      html {
+        direction: rtl;
+      }
+      body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      main {
+        flex-grow: 1;
+      }
+      .font-orbitron {
+        font-family: "Orbitron", sans-serif;
+      }
+      .glass-card {
+        background: rgba(26, 26, 46, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(159, 93, 255, 0.2);
+      }
+      .gradient-text {
+        background: linear-gradient(
+          90deg,
+          var(--accent-primary),
+          var(--accent-secondary)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(
+            to right,
+            rgba(159, 93, 255, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(159, 93, 255, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 50px 50px;
+        z-index: -1;
+        opacity: 0.5;
+      }
+      .form-input {
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 12px;
+        width: 100%;
+        transition: all 0.2s ease;
+        color: var(--text-primary);
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: var(--accent-primary);
+        box-shadow: 0 0 15px rgba(159, 93, 255, 0.5);
+      }
+      .form-button {
+        background: linear-gradient(90deg, var(--accent-primary), #7a2cff);
+        font-family: "Orbitron", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 12px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(159, 93, 255, 0.3);
+        width: 100%;
+        color: white;
+        cursor: pointer;
+      }
+      .form-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(159, 93, 255, 0.5);
+      }
+      /* کلاس برای مخفی کردن یک عنصر */
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
     <!-- Header -->
-    <header class="bg-black/30 backdrop-blur-lg sticky top-0 z-50 border-b border-purple-500/20">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="font-orbitron text-2xl font-bold tracking-wider gradient-text">KUDOPIXEL</a>
-        </nav>
+    <header
+      class="bg-black/30 backdrop-blur-lg sticky top-0 z-50 border-b border-purple-500/20"
+    >
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="index.html"
+          class="font-orbitron text-2xl font-bold tracking-wider gradient-text"
+          >KUDOPIXEL</a
+        >
+      </nav>
     </header>
 
     <main class="flex items-center justify-center">
-        <div class="container mx-auto px-6 py-16 text-center">
-            
-            <div x-data="authForm" class="max-w-md mx-auto">
-                <div class="glass-card rounded-2xl p-8 md:p-12">
-                    <h1 class="font-orbitron text-3xl md:text-4xl font-bold mb-4 uppercase gradient-text" x-text="isLogin ? 'Welcome Back!' : 'Join the KudoVerse'"></h1>
-                    <p class="text-text-secondary mb-8" x-text="isLogin ? 'Log in to access your KudoVerse profile.' : 'Create your account to become a legend.'"></p>
+      <div class="container mx-auto px-6 py-16 text-center">
+        <div class="max-w-md mx-auto">
+          <div class="glass-card rounded-2xl p-8 md:p-12">
+            <h1
+              id="form-title"
+              class="font-orbitron text-3xl md:text-4xl font-bold mb-4 uppercase gradient-text"
+            >
+              به KudoVerse ملحق شو
+            </h1>
+            <p id="form-subtitle" class="text-text-secondary mb-8">
+              برای تبدیل شدن به یک افسانه، حساب کاربری خود را بسازید.
+            </p>
 
-                    <!-- Universal Message Box -->
-                    <div x-show="message" x-text="message" :class="{ 'bg-green-500/20 text-green-300': messageType === 'success', 'bg-red-500/20 text-red-300': messageType === 'error' }" class="p-4 rounded-lg mb-6" style="display: none;"></div>
+            <!-- جعبه پیام عمومی -->
+            <div id="message-box" class="p-4 rounded-lg mb-6 hidden"></div>
 
-                    <!-- Login Form -->
-                    <form @submit.prevent="submitLogin" x-show="isLogin" style="display: none;">
-                        <div class="space-y-4 text-left">
-                            <input type="email" x-model="login.email" placeholder="Email" class="form-input">
-                            <input type="password" x-model="login.password" placeholder="Password" class="form-input">
-                            <button type="submit" class="form-button">Login</button>
-                        </div>
-                    </form>
+            <!-- فرم ورود -->
+            <form id="login-form" class="hidden">
+              <div class="space-y-4 text-right">
+                <input
+                  type="text"
+                  id="login-username"
+                  placeholder="نام کاربری یا ایمیل"
+                  class="form-input"
+                  required
+                />
+                <input
+                  type="password"
+                  id="login-password"
+                  placeholder="رمز عبور"
+                  class="form-input"
+                  required
+                />
+                <button type="submit" class="form-button">ورود</button>
+              </div>
+            </form>
 
-                    <!-- Registration Form -->
-                    <form @submit.prevent="submitRegister" x-show="!isLogin">
-                        <div class="space-y-4 text-left">
-                            <input type="text" x-model="register.username" placeholder="Username" class="form-input">
-                            <input type="email" x-model="register.email" placeholder="Email" class="form-input">
-                            <input type="password" x-model="register.password" placeholder="Password (min. 8 characters)" class="form-input">
-                            <button type="submit" class="form-button">Create Account</button>
-                        </div>
-                    </form>
+            <!-- فرم ثبت‌نام -->
+            <form id="register-form">
+              <div class="space-y-4 text-right">
+                <input
+                  type="text"
+                  id="register-username"
+                  placeholder="نام کاربری"
+                  class="form-input"
+                  required
+                />
+                <input
+                  type="email"
+                  id="register-email"
+                  placeholder="ایمیل"
+                  class="form-input"
+                  required
+                />
+                <input
+                  type="password"
+                  id="register-password"
+                  placeholder="رمز عبور (حداقل ۸ کاراکتر)"
+                  class="form-input"
+                  required
+                />
+                <button type="submit" class="form-button">ساخت حساب</button>
+              </div>
+            </form>
 
-                    <p class="mt-8 text-sm">
-                        <span x-text="isLogin ? 'Don\'t have an account?' : 'Already have an account?'"></span>
-                        <a href="#" @click.prevent="isLogin = !isLogin" class="font-semibold text-cyan-400 hover:underline" x-text="isLogin ? 'Sign Up' : 'Log In'"></a>
-                    </p>
-                </div>
-            </div>
-
+            <p class="mt-8 text-sm">
+              <span id="toggle-text">حساب کاربری دارید؟</span>
+              <a
+                href="#"
+                id="toggle-link"
+                class="font-semibold text-cyan-400 hover:underline"
+                >وارد شوید</a
+              >
+            </p>
+          </div>
         </div>
+      </div>
     </main>
-    
+
     <!-- JAVASCRIPT SECTION -->
     <script>
-ه        document.addEventListener('alpine:init', () => {
-            Alpine.data('authForm', () => ({
-                isLogin: true,
-                message: '',
-                messageType: '',
-                
-                login: {
-                    email: '',
-                    password: ''
-                },
-                register: {
-                    username: '',
-                    email: '',
-                    password: ''
-                },
+      // این کد زمانی اجرا میشه که کل صفحه HTML لود شده باشه
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- گرفتن تمام عناصر لازم از صفحه ---
+        const loginForm = document.getElementById("login-form");
+        const registerForm = document.getElementById("register-form");
+        const messageBox = document.getElementById("message-box");
+        const toggleLink = document.getElementById("toggle-link");
+        const formTitle = document.getElementById("form-title");
+        const formSubtitle = document.getElementById("form-subtitle");
+        const toggleText = document.getElementById("toggle-text");
 
-                async callApi(endpoint, body) {
-                    this.message = '';
-                    try {
-                        const response = await fetch(`http://localhost:8000/api/${endpoint}`, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json'
-                            },
-                            body: JSON.stringify(body)
-                        });
+        // --- تابع برای جابجایی بین فرم لاگین و ثبت‌نام ---
+        const toggleForms = (showLogin) => {
+          if (showLogin) {
+            loginForm.classList.remove("hidden");
+            registerForm.classList.add("hidden");
+            formTitle.textContent = "خوش آمدید!";
+            formSubtitle.textContent = "برای دسترسی به پروفایل خود وارد شوید.";
+            toggleText.textContent = "حساب کاربری ندارید؟";
+            toggleLink.textContent = "ثبت نام کنید";
+          } else {
+            loginForm.classList.add("hidden");
+            registerForm.classList.remove("hidden");
+            formTitle.textContent = "به KudoVerse ملحق شو";
+            formSubtitle.textContent =
+              "برای تبدیل شدن به یک افسانه، حساب کاربری خود را بسازید.";
+            toggleText.textContent = "حساب کاربری دارید؟";
+            toggleLink.textContent = "وارد شوید";
+          }
+        };
 
-                        const result = await response.json();
-
-                        if (!response.ok) {
-                            throw new Error(result.message || 'An unknown error occurred.');
-                        }
-                        
-                        this.messageType = 'success';
-                        this.message = result.message;
-
-                        if (result.status === 'success') {
-                            setTimeout(() => {
-                                window.location.href = 'profile.html'; 
-                            }, 2000);
-                        }
-
-                    } catch (error) {
-                        this.messageType = 'error';
-                        this.message = error.message;
-                    }
-                },
-
-                submitLogin() {
-                    this.callApi('auth/login.php', this.login);
-                },
-
-                submitRegister() {
-                    this.callApi('auth/register.php', this.register);
-                }
-            }));
+        // --- گوش دادن به کلیک روی لینک جابجایی ---
+        toggleLink.addEventListener("click", (event) => {
+          event.preventDefault(); // جلوگیری از رفرش شدن صفحه
+          // اگر فرم لاگین مخفی بود، یعنی در حالت ثبت‌نام هستیم، پس باید لاگین را نشان دهیم
+          const showLogin = loginForm.classList.contains("hidden");
+          toggleForms(showLogin);
         });
+
+        // --- تابع اصلی برای ارسال درخواست به سرور ---
+        const handleFormSubmit = async (url, body) => {
+          // پاک کردن پیام‌های قبلی
+          messageBox.textContent = "";
+          messageBox.className = "p-4 rounded-lg mb-6 hidden";
+
+          try {
+            // آدرس‌دهی درست اینجاست!
+            // این آدرس بر اساس راهنمای اجرا در بخش بعدی کار می‌کند
+            const response = await fetch(url, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify(body),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+              throw new Error(result.message || "یک خطای ناشناخته رخ داد.");
+            }
+
+            // نمایش پیام موفقیت
+            messageBox.textContent = result.message;
+            messageBox.className =
+              "p-4 rounded-lg mb-6 bg-green-500/20 text-green-300";
+
+            // اگر کاربر با موفقیت لاگین یا ثبت‌نام کرد
+            if (result.user && result.user.id) {
+              // ذخیره اطلاعات کاربر در حافظه مرورگر
+              localStorage.setItem("kudoUser", JSON.stringify(result.user));
+
+              // انتقال به صفحه پروفایل بعد از ۱.۵ ثانیه
+              setTimeout(() => {
+                window.location.href = "profile.html";
+              }, 1500);
+            }
+          } catch (error) {
+            // نمایش پیام خطا
+            messageBox.textContent = error.message;
+            messageBox.className =
+              "p-4 rounded-lg mb-6 bg-red-500/20 text-red-300";
+          }
+        };
+
+        // --- گوش دادن به ارسال فرم ثبت‌نام ---
+        registerForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const formData = {
+            username: document.getElementById("register-username").value,
+            email: document.getElementById("register-email").value,
+            password: document.getElementById("register-password").value,
+          };
+          // صدا زدن تابع اصلی با آدرس و اطلاعات درست
+          handleFormSubmit("/index.php?module=auth&action=register", formData);
+        });
+
+        // --- گوش دادن به ارسال فرم ورود ---
+        loginForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const formData = {
+            // فایل login.php شما منتظر 'username' است
+            username: document.getElementById("login-username").value,
+            password: document.getElementById("login-password").value,
+          };
+          handleFormSubmit("/index.php?module=auth&action=login", formData);
+        });
+
+        // در شروع، فرم ثبت‌نام را نمایش بده
+        toggleForms(false);
+      });
     </script>
-
- <!-- THE FIX IS HERE: Alpine.js MUST be loaded with 'defer' to run after the page is ready -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-
-</body>
-
+  </body>
 </html>
