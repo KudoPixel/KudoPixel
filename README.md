@@ -1,1 +1,47 @@
-👋 Hi, I'm KudoPixel! The Architect of Innovation.Welcome to my digital workshop, where logic meets boundless creativity, and every line of code is written with genuine passion.🔥 Coding is Love, Not a JobMy journey began with Windows XP when I was five years old, and since then, programming has transformed from a skill into a deep-rooted obsession and a lifelong love. I live and breathe code, striving to be more than just a developer—I am an Ideator, Creator, and Digital Architect.I believe every project (website, bot, or application) should possess a unique personality. My commitment is to build 100% complete products that perfectly embody the spirit and character of the original idea.🌟 My Motto: Crafting seamless, personality-driven digital experiences from concept to launch.⚙️ Professional Toolkit (Core Expertise)These are the pillars of my professional practice. I have deep experience in these technologies and am ready to deploy them in scalable, serious projects:💻 Frontend & Backend Development💾 Databases & Infrastructure🤖 API & Automation(Bot Development)🔭 Expanding Horizons (In-Progress Skills)I continuously learn and experiment with these complementary technologies to broaden my skill set and future capabilities:| Technology | Focus Area | Status || React | Modern, reactive user interfaces (UIs). | ⏳ Learning || Docker | Containerization for consistent development environments. | ⏳ Exploring || DevOps Concepts | Principles and tools for CI/CD and operations. | ⏳ Exploring || Discord API (Bot) | Building utility and social bots. | ⏳ Exploring || Java | Object-Oriented Programming (OOP) fundamentals. | ⏳ Learning |🤝 Let's Collaborate!I'm always excited to connect with fellow creators and innovators. If you have an idea that needs a passionate touch and full dedication, let's talk!⭐ My Next Goal: Diving deeper into the Open Source community and contributing high-quality, creative projects.— KudoPixel
+# 👋 Hi, I'm KudoPixel  
+
+🚀 **Creative Developer | Idea Maker | Tech Enthusiast**  
+
+---
+
+## 🧑‍💻 About Me
+I'm **KudoPixel**, a passionate developer who fell in love with computers since the early days of **Windows XP**.  
+For me, coding is not just a job – it's **love, art, and creativity**.  
+I believe every project should reflect personality and uniqueness, not just lines of code.  
+
+💡 *My vision:* Building digital experiences that go beyond function — they carry meaning, emotion, and style.  
+
+---
+
+## 🔥 Core Skills
+- **Frontend:** HTML, CSS, JavaScript  
+- **Backend:** PHP, Laravel  
+- **Databases:** PostgreSQL (PgSQL), MySQL  
+- **APIs:** Telegram Bot API  
+- **System:** Server Administration  
+
+---
+
+## ⚡ Complementary Skills (Exploring & Learning)
+- React  
+- Docker  
+- Discord Bot API  
+- DevOps Basics  
+- Java  
+
+---
+
+## 🎯 Philosophy
+> *“Creativity is the soul of coding. A website or app isn’t just a tool – it’s a reflection of imagination.”*  
+
+I’m always pushing to create complete solutions, from concept to deployment, blending **technical precision** with **creative vision**.  
+
+---
+
+## 🌐 Let's Connect
+- 💬 Always open to collaborate on creative projects  
+- 🌱 Continuously learning & experimenting with new tech  
+
+---
+
+✨ *Coding is my canvas, ideas are my colors, and the web is where I paint.*
